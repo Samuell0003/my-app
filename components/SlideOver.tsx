@@ -13,7 +13,7 @@ export default function SlideOver(props: Props) {
 
     return (
         <Transition.Root show={props.open} as={Fragment}>
-            <Dialog as="div" className="relative z-10" onClose={() => false}>
+            <Dialog as="div" className="relative z-10" onClose={() => props.closeProfile()}>
                 <Transition.Child
                     as={Fragment}
                     enter="ease-in-out duration-500"

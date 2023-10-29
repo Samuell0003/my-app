@@ -2,8 +2,15 @@
 import { signOut } from "next-auth/react";
 import { Button } from "./ui/button";
 import { useRouter } from "next/navigation";
+import { cn } from "@/lib/utils";
 
-export default function ButtonLogout() {
+export default function ButtonLogout({
+    children,
+    className
+  }: {
+    children: React.ReactNode,
+    className?:string
+  }) {
     const route = useRouter();
     
     async function logout() {
@@ -14,7 +21,7 @@ export default function ButtonLogout() {
     
     }
     return (
-        <Button variant="outline" className="ml-4" onClick={logout}>Sair</Button>
+        <Button variant="outline" className={cn("ml-4", className)} onClick={logout}>{children}</Button>
     )
 }
 

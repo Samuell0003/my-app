@@ -47,11 +47,11 @@ export default function ItemsNavBar() {
       
       
 
-    const opMenu = ({...e}) => {
+    const opMenu = ({...e}, i:number ) => {
         return(
-            <a className="relative flex justify-center items-center w-full h-12 px-3 mt-2 rounded hover:bg-violet-900" href={e.href}>
+            <a className="relative flex justify-center items-center w-full h-12 px-3 mt-2 rounded hover:bg-violet-900" key={i} href={e.href}>
                 <svg className="w-6 h-6 stroke-current" xmlns={e.xmlns}fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={e.d} />
+                    <path d={e.d} />
                 </svg>
                 <span className="ml-2 text-sm font-medium">{e.text}</span>
             </a>
@@ -60,8 +60,8 @@ export default function ItemsNavBar() {
 
 
     return (
-        listOp.map(e => {
-            return opMenu(e);
+        listOp.map((e, i) => {
+            return opMenu(e, i);
         })
     );
 }

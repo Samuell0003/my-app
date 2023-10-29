@@ -1,5 +1,5 @@
 'use client'
-import Loading from "@/app/components/Loading";
+import Loading from "@/components/Loading";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { SyntheticEvent, useState } from "react";
@@ -116,7 +116,7 @@ export default function Login() {
 
                             <div>
                                 <button disabled={isDisabled} type="submit" className="flex w-full items-center justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                                >{!isLoading ? "Entrar" : <Loading></Loading>}</button>
+                                >{!isLoading ? "Entrar" : <Loading className=""></Loading>}</button>
                             </div>
                         </form>
 

@@ -6,13 +6,15 @@ enum Direction {
   
 declare module 'next-auth' {
     interface Session {
-        user: {
-            id: string
-            avatar: string
-            email: string
-            firstName: string
-            lastName: string
-            role: Direction
-        }
+        user: User
+    }
+
+    interface User  {
+        id: string
+        avatar: string
+        email: string
+        firstName: string
+        lastName: string
+        role: Direction
     }
 }

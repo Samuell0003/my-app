@@ -23,7 +23,7 @@ export default function Profile(props: Props) {
             </div>
             <div className="p-4 self-center">
                 <EditProfile user={props.user}/>
-                <ButtonLogout/>
+                <ButtonLogout>Sair</ButtonLogout>
             </div>
         </div>
     )
